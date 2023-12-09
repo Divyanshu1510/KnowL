@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Share File</h2>
+  <form method="post" action="{% url 'share_file' file_id=file.id %}">
+    {% csrf_token %}
+    <label for="shared_with">Share with:</label>
+    <input type="text" name="shared_with" required>
+    <button type="submit">Share</button>
+  </form>
+{% endblock %}
